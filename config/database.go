@@ -1,6 +1,8 @@
 package config
 
 import (
+	datacr "campusmanagement/features/criterias/data"
+
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )
@@ -15,4 +17,5 @@ func InitDB() {
 	}
 
 	DB = db
+	DB.AutoMigrate(&datacr.Criteria{})
 }
